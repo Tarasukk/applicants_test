@@ -13,10 +13,11 @@ The Searchable App allows users to search for programming languages based on var
 - Support for exact matches and negative searches.
 - Relevance-based ordering of search results.
 
-## Requirements
+## Technologies
 
-- Ruby 3.x
-- Rails 7.x
+- Ruby 3.1.3
+- Rails 7.1.1
+- Bootstrap 5.3.2
 
 ## Installation
 
