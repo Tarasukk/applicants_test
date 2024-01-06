@@ -10,11 +10,11 @@ class MainController < ApplicationController
     @input_name = params[:query]
     input_words = @input_name.split
 
-    negative_terms = input_words.select { |term| term.start_with?('-') }.map { |term| term[1..-1] }
+    negative_terms = input_words.select { |term| term.start_with?('-') }.map { |term| term[1..-1] } 
     positive_terms = input_words.reject { |term| term.start_with?('-') }
 
     @results = @data.select do |entry|
-      entry_values = [entry["Name"], entry["Type"], entry["Designed by"]].compact
+      entry_values = [entry["Name"], entry["Type"], entry["Designed by"]].compact 
       positive_match = positive_terms.all? do |term|
         entry_values.any? { |value| value && value.downcase.include?(term.downcase) }
       end
@@ -36,7 +36,7 @@ class MainController < ApplicationController
     @data = JSON.parse(File.read(file_path))
   end
 
-  def sort_results_by_priority
+  def sort_results_by_priority # Name priority when sorting
     @results.sort_by! do |item|
       [
         item["Name"].downcase.include?(@input_name.downcase) ? 0 : 1,
