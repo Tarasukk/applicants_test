@@ -24,6 +24,8 @@ class MainController < ApplicationController
       positive_match && negative_match
     end
 
+    sort_results_by_priority
+
     render 'index'
   end
 
@@ -32,5 +34,14 @@ class MainController < ApplicationController
   def load_data
     file_path = Rails.root.join('public', 'data.json')
     @data = JSON.parse(File.read(file_path))
+  end
+
+  def sort_results_by_priority
+    @results.sort_by! do |item|
+      [
+        item["Name"].downcase.include?(@input_name.downcase) ? 0 : 1,
+        item["Name"].downcase
+      ]
+    end
   end
 end
