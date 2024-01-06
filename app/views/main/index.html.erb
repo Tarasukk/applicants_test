@@ -1,1 +1,21 @@
-<p class="text-danger">Hello</p>
+<div class="container mt-5">
+  <h1 class="mb-4">Searchable App</h1>
+  <%= form_with(url: '/search', method: 'get', class: 'mb-4') do %>
+    <div class="input-group">
+      <%= text_field_tag :query, nil, class: 'form-control', placeholder: 'Search...' %>
+      <%= button_to search_path, method: :get, class: 'btn btn-primary' do %>
+        Search
+      <% end %>
+    </div>
+  <% end %>
+  <h2>Search Results:<%= @input_name %></h2>
+  <ul class="list-group">
+    <% @results.each do |item| %>
+      <li class="list-group-item">
+        <%= item["Name"] %>
+        <%= item["Type"] %>
+        <%= item["Designed by"] %>
+      </li>
+    <% end %>
+  </ul>
+</div>
