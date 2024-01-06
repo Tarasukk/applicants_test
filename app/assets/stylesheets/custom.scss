@@ -1,0 +1,63 @@
+body {
+  padding: 25px;
+
+  background-color: #141B21;
+  font-family: 'Fixel Display', sans-serif;
+  background-image: url('Vector.png');
+  background-repeat: no-repeat;
+  background-size: 50% auto;
+
+  background-position: right top;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+.search-button {
+  background: #e9573e;
+  border-top-right-radius: 48px;
+  border-bottom-right-radius: 48px;
+}
+
+.search-button:hover {
+  background: #9e3f2e;
+}
+
+.language-info {
+  max-width: 600px;
+  margin: auto;
+}
+
+.list-group-item {
+  background-color: #f8f9fa;
+}
+
+.card-corners {
+  border-radius: 48px;
+}
+
+.custom-card {
+  height: 741px;
+  // max-width: 792px;
+}
+
+.cst-title {
+  font-size: 20px;
+}
+
+.cst-text {
+  font-size: 16px;
+}

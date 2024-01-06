@@ -31,6 +31,7 @@ gem "redis", ">= 4.0.1"
 
 gem 'bootstrap', '~> 5.3.2'
 gem "sassc-rails"
+gem "font-awesome-sass", "~> 6.5.1"
 
 gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 

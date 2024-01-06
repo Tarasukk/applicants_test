@@ -1,21 +1,43 @@
 <div class="container mt-5">
-  <h1 class="mb-4">Searchable App</h1>
+  <h1 class="mb-4 text-white">Find, search, discover and explore.</h1>
   <%= form_with(url: '/search', method: 'get', class: 'mb-4') do %>
     <div class="input-group">
-      <%= text_field_tag :query, nil, class: 'form-control', placeholder: 'Search...' %>
-      <%= button_to search_path, method: :get, class: 'btn btn-primary' do %>
-        Search
+      <%= text_field_tag :query, nil, class: 'form-control p-2 card-corners', placeholder: 'Search' %>
+      <%= button_to search_path, method: :get, class: 'btn search-button ' do %>
+        <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
       <% end %>
     </div>
   <% end %>
-  <h2>Search Results:<%= @input_name %></h2>
-  <ul class="list-group">
-    <% @results.each do |item| %>
-      <li class="list-group-item">
-        <%= highlight_search_term(item["Name"]) %> |
-        <%= highlight_search_term(item["Type"]) %> |
-        <%= highlight_search_term(item["Designed by"]) %>
-      </li>
+  <div class="card card-corners p-3" style="min-height: 700px;">
+    <div class="d-flex flex-column mb-4">
+      <h6 class="cst-title">Search Results:<%= @input_name %></h2>
+      <p class="cst-text text-secondary"><%= @results.length %> results found</p>
+    </div>
+    <% if @results.empty? %>
+      <h1 class="text-center mt-4" style="font-size:120px;">;(</h1>
+    <% else %>
+      <% @results.each do |item| %>
+        <ul class="d-flex flex-column gap-1" style="list-style-type: none;">
+          <h6 class="cst-title mb-2"><%= highlight_search_term(item["Name"]) %></h1>
+          <li class=""><strong>Type:</strong><%= highlight_search_term(item["Type"]) %></li>
+          <li class=""><strong>Designed by:</strong><%= highlight_search_term(item["Designed by"]) %></li>
+        </ul>
+        <hr class="mb-4 mt-2 text-mutedr">
+      <% end %>
     <% end %>
-  </ul>
+  </div>
 </div>
+<%# <div class="d-flex flex-row card mt-5 justify-content-around">
+  <div class="d-flex flex-column">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+    </ul>
+  </div>
+  <div class="d-flex flex-column">
+    <ul>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </div>
+</div> %>
