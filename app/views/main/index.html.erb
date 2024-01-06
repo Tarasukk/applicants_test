@@ -12,9 +12,9 @@
   <ul class="list-group">
     <% @results.each do |item| %>
       <li class="list-group-item">
-        <%= item["Name"] %>
-        <%= item["Type"] %>
-        <%= item["Designed by"] %>
+        <%= highlight_search_term(item["Name"]) %> |
+        <%= highlight_search_term(item["Type"]) %> |
+        <%= highlight_search_term(item["Designed by"]) %>
       </li>
     <% end %>
   </ul>
