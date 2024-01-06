@@ -1,24 +1,36 @@
-# README
+# [Searchable App](https://taras-rails-app-ebf753b577cd.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple web application for searching programming languages and their details.
 
-Things you may want to cover:
+## Overview
 
-* Ruby version
+The Searchable App allows users to search for programming languages based on various criteria. The application is built using Ruby on Rails and provides a user-friendly interface for searching and visualizing programming languages.
 
-* System dependencies
+## Features
 
-* Configuration
+- Search programming languages by name, type, or designer.
+- Case-insensitive search with highlighted matching terms.
+- Support for exact matches and negative searches.
+- Relevance-based ordering of search results.
 
-* Database creation
+## Requirements
 
-* Database initialization
+- Ruby 3.x
+- Rails 7.x
 
-* How to run the test suite
+## Installation
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Clone the repository: `git clone https://github.com/Tarasukk/applicants_test.git`
+2. Install dependencies: `bundle install`
+3. Run the application: `rails server`
 
-* Deployment instructions
+## Usage
 
-* ...
+1. Open your web browser and go to `http://localhost:3000`.
+2. Enter your search query in the provided input field.
+3. Explore the search results with highlighted matching terms.
+
+## Implementation Details
+
+- Search logic implemented in Ruby without external gems.
+
