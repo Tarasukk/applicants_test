@@ -7,7 +7,7 @@ class MainController < ApplicationController
   helper :all
 
   def index
-    @index ||= []
+    @results ||= Array.new(0)
   end
 
   def search
